@@ -1,0 +1,1007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ReservedString" xml:space="preserve">
+    <value>{
+  "Days": [
+    {
+      "Time": "January 5th",
+      "Character": "Yumemi Okazaki",
+      "Name": "The Professor's Day"
+    },
+    {
+      "Time": "January 6th",
+      "Character": "Hakurei Reimu",
+      "Name": "Hakurei Reimu's Day"
+    },
+    {
+      "Time": "January 7th",
+      "Character": "Kagiyama Hina",
+      "Name": "Kagiyama Hina's Day"
+    },
+    {
+      "Time": "January 8th",
+      "Character": "Ibaraki Kasen",
+      "Name": "Ibaraki Kasen's Day"
+    },
+    {
+      "Time": "January 9th",
+      "Character": "Nagae Iku",
+      "Name": "Iku San's Day"
+    },
+    {
+      "Time": "January 10th",
+      "Character": "TH1 (Highly Responsive to Prayers)",
+      "Name": "TH1's Day"
+    },
+    {
+      "Time": "January 10th",
+      "Character": "Inubashiri Momizi",
+      "Name": "Inubashiri Momizi's Day"
+    },
+    {
+      "Time": "February 2nd",
+      "Character": "Kirisame Marisa",
+      "Name": "The Ordinary Magician's Day"
+    },
+    {
+      "Time": "February 6th",
+      "Character": "TH2 (The Story of Eastern Wonderland)",
+      "Name": "TH2's Day"
+    },
+    {
+      "Time": "February 7th",
+      "Character": "Toyosatomimi no Miko",
+      "Name": "Miko Sama's Day"
+    },
+    {
+      "Time": "February 8th·18th·28th",
+      "Character": "Ellen",
+      "Name": "Ellen's Day"
+    },
+    {
+      "Time": "February 9th",
+      "Character": "TH3 (Phantasmagoria of Dim.Dream)",
+      "Name": "TH3's Day"
+    },
+    {
+      "Time": "February 10th",
+      "Character": "Mononobe no Futo",
+      "Name": "Mononobe no Futo's Day"
+    },
+    {
+      "Time": "February 10th",
+      "Character": "Kawasiro Nitori",
+      "Name": "Kawasiro Nitori's Day"
+    },
+    {
+      "Time": "February 10th",
+      "Character": "Hutatsuiwa Mamizou",
+      "Name": "Hutatsuiwa Mamizou's Day"
+    },
+    {
+      "Time": "February 10th",
+      "Character": "Houraisan Kaguya",
+      "Name": "Neet's Day"
+    },
+    {
+      "Time": "February 18th",
+      "Character": "Hutatsuiwa Mamizou",
+      "Name": "Hutatsuiwa Mamizou's Day"
+    },
+    {
+      "Time": "February 23rd",
+      "Character": "Saigyouji Yuyuko",
+      "Name": "Saigyouji Yuyuko's Day"
+    },
+    {
+      "Time": "February 29th",
+      "Character": "Miyako Yoshika",
+      "Name": "Carrion's Day"
+    },
+    {
+      "Time": "March 1st",
+      "Character": "Hakurei Reimu",
+      "Name": "Hakurei Reimu's Day"
+    },
+    {
+      "Time": "March 2nd·21st",
+      "Character": "Sunny Milk",
+      "Name": "Sunny Milk's Day"
+    },
+    {
+      "Time": "March 3rd",
+      "Character": "Kagiyama Hina",
+      "Name": "Hina's Festival"
+    },
+    {
+      "Time": "March 4th",
+      "Character": "Konpaku Youmu",
+      "Name": "Myon's Day"
+    },
+    {
+      "Time": "March 5th",
+      "Character": "Miko",
+      "Name": "Miko's Day"
+    },
+    {
+      "Time": "March 5th",
+      "Character": "Toyosatomimi no Miko",
+      "Name": "Toyosatomimi no Miko's Day"
+    },
+    {
+      "Time": "March 7th",
+      "Character": "Kotiya Sanae",
+      "Name": "Sanae Chan's Day"
+    },
+    {
+      "Time": "March 8th",
+      "Character": "Myouren",
+      "Name": "Myouren's Day"
+    },
+    {
+      "Time": "March 9th",
+      "Character": "Moriya Suwako",
+      "Name": "Moriya Sama's Day"
+    },
+    {
+      "Time": "March 10th",
+      "Character": "Komeiji Satori",
+      "Name": "Komeiji Satori's Day"
+    },
+    {
+      "Time": "March 10th",
+      "Character": "Sariel",
+      "Name": "Sariel's Day"
+    },
+    {
+      "Time": "March 12th",
+      "Character": "Soga no Toziko",
+      "Name": "Soga no Toziko's Day"
+    },
+    {
+      "Time": "March 18th",
+      "Character": "Tewi Inaba",
+      "Name": "Tewi Inaba's Day"
+    },
+    {
+      "Time": "March 18th",
+      "Character": "ZUN",
+      "Name": "ZUN's Birthday"
+    },
+    {
+      "Time": "March 20th",
+      "Character": "Mononobe no Futo",
+      "Name": "Mononobe no Futo's Day"
+    },
+    {
+      "Time": "April 6th",
+      "Character": "Konpaku Youmu",
+      "Name": "Konpaku Youmu's Day"
+    },
+    {
+      "Time": "April 6th-7th",
+      "Character": "Rumia",
+      "Name": "Rumia's Day"
+    },
+    {
+      "Time": "April 10th",
+      "Character": "Mizuhashi Parsee",
+      "Name": "Mizuhashi Parsee's Day"
+    },
+    {
+      "Time": "April 28th",
+      "Character": "Aki Sizuha",
+      "Name": "Aki Sizuha's Day"
+    },
+    {
+      "Time": "April 30th",
+      "Character": "Kamishirasawa Keine",
+      "Name": "Shirasawa's Day"
+    },
+    {
+      "Time": "May 1st",
+      "Character": "Medicine Melancholy",
+      "Name": "Conparo's Festival"
+    },
+    {
+      "Time": "May 3rd",
+      "Character": "Hoan Meirin &amp; Remilia Scarlet",
+      "Name": "Melee's Day"
+    },
+    {
+      "Time": "May 5th",
+      "Character": "TH5 (Mystic Square)",
+      "Name": "TH5's Day"
+    },
+    {
+      "Time": "May 5th-6th",
+      "Character": "Hata no Kokoro",
+      "Name": "Hata no Kokoro's Day"
+    },
+    {
+      "Time": "May 10th",
+      "Character": "Kotohime",
+      "Name": "Kotohime's Day"
+    },
+    {
+      "Time": "May 14th",
+      "Character": "Komeiji Koishi",
+      "Name": "Komeiji Koishi's Day"
+    },
+    {
+      "Time": "May 15th",
+      "Character": "Hoan Meirin",
+      "Name": "Hoan Meirin's Day"
+    },
+    {
+      "Time": "May 15th",
+      "Character": "Hata no Kokoro",
+      "Name": "Hata no Kokoro's Day"
+    },
+    {
+      "Time": "May 16th",
+      "Character": "Kirisame Marisa",
+      "Name": "Master Spark's Day"
+    },
+    {
+      "Time": "May 26th",
+      "Character": "Hata no Kokoro",
+      "Name": "Hata no Kokoro's Day"
+    },
+    {
+      "Time": "May 26th",
+      "Character": "TH13.5 (Hopeless Masquerade)",
+      "Name": "TH13.5 (Hopeless Masquerade)'s Day"
+    },
+    {
+      "Time": "June 1st",
+      "Character": "Kumoi Ichirin",
+      "Name": "Kumoi Ichirin's Day"
+    },
+    {
+      "Time": "June 4th",
+      "Character": "Wriggle Nightbug",
+      "Name": "Wriggle Nightbug's Day"
+    },
+    {
+      "Time": "June 5th",
+      "Character": "Junko",
+      "Name": "Junko's Day"
+    },
+    {
+      "Time": "June 6th",
+      "Character": "Sekibanki",
+      "Name": "Sekibanki's Day"
+    },
+    {
+      "Time": "June 7th",
+      "Character": "Rumia",
+      "Name": "Rumia's Day"
+    },
+    {
+      "Time": "June 9th",
+      "Character": "Patchouli Knowledge",
+      "Name": "Patchouli Knowledge's Day"
+    },
+    {
+      "Time": "June 9th",
+      "Character": "SinGyoku",
+      "Name": "SinGyoku's Day"
+    },
+    {
+      "Time": "June 10th",
+      "Character": "Patchouli Knowledge",
+      "Name": "The festival for the people who did not catch Patchouli's Day"
+    },
+    {
+      "Time": "June 11th",
+      "Character": "Karakasa",
+      "Name": "Karakasa's Day"
+    },
+    {
+      "Time": "June 14th",
+      "Character": "Komeiji Koishi",
+      "Name": "Lolita Koishi's Day"
+    },
+    {
+      "Time": "June 16th",
+      "Character": "Alice Margatroid",
+      "Name": "Alice Margatroid's Day"
+    },
+    {
+      "Time": "June 24th",
+      "Character": "Houjuu Nue",
+      "Name": "Houjuu Nue's Day"
+    },
+    {
+      "Time": "July 4th",
+      "Character": "Flandre Scarlet",
+      "Name": "Flandre Scarlet's Day"
+    },
+    {
+      "Time": "July 4th",
+      "Character": "Nameless Characters",
+      "Name": "Nameless Characters' Day"
+    },
+    {
+      "Time": "July 6th",
+      "Character": "Hiziri Byakuren",
+      "Name": "Namusan's Day"
+    },
+    {
+      "Time": "July 6th",
+      "Character": "Lyrica Prismriver",
+      "Name": "Lyrica Prismriver's Day"
+    },
+    {
+      "Time": "July 7th",
+      "Character": "Rumia",
+      "Name": "Rumia's Day"
+    },
+    {
+      "Time": "July 7th",
+      "Character": "Kirisame Marisa",
+      "Name": "Kirisame Marisa's Day"
+    },
+    {
+      "Time": "July 9th",
+      "Character": "Cirno",
+      "Name": "Cirno's Day"
+    },
+    {
+      "Time": "July 12th",
+      "Character": "Nagae Iku",
+      "Name": "Iku Sama's Day"
+    },
+    {
+      "Time": "July 14th",
+      "Character": "Kazami Yuka",
+      "Name": "Kazami Yuka's Day"
+    },
+    {
+      "Time": "July 14th",
+      "Character": "Syameimaru Aya",
+      "Name": "Syameimaru Aya's Day"
+    },
+    {
+      "Time": "July 16th",
+      "Character": "Alice Margatroid",
+      "Name": "The Seven-colored Puppeteer's Day"
+    },
+    {
+      "Time": "July 20th",
+      "Character": "Nazrin",
+      "Name": "Nazrin's Day"
+    },
+    {
+      "Time": "August 3rd",
+      "Character": "Yasaka Kanako",
+      "Name": "Yasaka Kanako's Day"
+    },
+    {
+      "Time": "August 3rd",
+      "Character": "Meira",
+      "Name": "Meira's Day"
+    },
+    {
+      "Time": "August 4th",
+      "Character": "Soga no Toziko",
+      "Name": "Soga no Toziko's Day"
+    },
+    {
+      "Time": "August 4th",
+      "Character": "Mizuhashi Parsee",
+      "Name": "Mizuhashi Parsee's Day"
+    },
+    {
+      "Time": "August 4th",
+      "Character": "Kasodani Kyouko",
+      "Name": "Kasodani Kyouko's Day"
+    },
+    {
+      "Time": "About August 5th",
+      "Character": "Eirin Yagokoro",
+      "Name": "Eirin Yagokoro's Day"
+    },
+    {
+      "Time": "August 5th",
+      "Character": "Hata no Kokoro",
+      "Name": "Hata no Kokoro's Day"
+    },
+    {
+      "Time": "August 6th",
+      "Character": "Konpaku Youmu",
+      "Name": "Konpaku Youmu's Day"
+    },
+    {
+      "Time": "August 6th",
+      "Character": "Hakurei Reimu",
+      "Name": "Hakurei Reimu's Day"
+    },
+    {
+      "Time": "August 7th",
+      "Character": "Kurodani Yamame",
+      "Name": "Kurodani Yamame's Day"
+    },
+    {
+      "Time": "August 8th",
+      "Character": "Lyrica Prismriver",
+      "Name": "Lyrica Prismriver's Day"
+    },
+    {
+      "Time": "August 8th",
+      "Character": "Tsukumo Yatsuhashi",
+      "Name": "Super Yatsuhashi's Day"
+    },
+    {
+      "Time": "August 9th",
+      "Character": "Kagiyama Hina",
+      "Name": "Yakujin's Day"
+    },
+    {
+      "Time": "August 9th",
+      "Character": "Hakurei Reimu",
+      "Name": "Hakurei's Day"
+    },
+    {
+      "Time": "August 10th",
+      "Character": "Himekaidou Hatate",
+      "Name": "Himekaidou Hatate's Day"
+    },
+    {
+      "Time": "August 12th",
+      "Character": "Lunasa Prismriver",
+      "Name": "Lunasa Prismriver's Day"
+    },
+    {
+      "Time": "August 17th",
+      "Character": "TH10 (Mountain of Faith)",
+      "Name": "TH10's Day"
+    },
+    {
+      "Time": "August 20th",
+      "Character": "Kawasiro Nitori",
+      "Name": "Kawasiro Nitori's Day"
+    },
+    {
+      "Time": "August 21st",
+      "Character": "Cirno",
+      "Name": "Perfect's Day"
+    },
+    {
+      "Time": "Every day in September",
+      "Character": "Cirno",
+      "Name": "Cirno's Day"
+    },
+    {
+      "Time": "September 6th",
+      "Character": "Moriya Suwako",
+      "Name": "Moriya Suwako's Day"
+    },
+    {
+      "Time": "September 6th",
+      "Character": "Kotiya Sanae",
+      "Name": "Kotiya Sanae's Day"
+    },
+    {
+      "Time": "September 6th to December 9th",
+      "Character": "Sister Characters",
+      "Name": "Sister Characters' Day"
+    },
+    {
+      "Time": "September 8th",
+      "Character": "Houraisan Kaguya",
+      "Name": "Houraisan Kaguya's Day"
+    },
+    {
+      "Time": "September 9th",
+      "Character": "Tsukumo Yatsuhashi",
+      "Name": "Tsukumo Sisters' Day"
+    },
+    {
+      "Time": "September 9th",
+      "Character": "Fortune Teller",
+      "Name": "Fortune Teller's Day"
+    },
+    {
+      "Time": "September 9th",
+      "Character": "Cirno",
+      "Name": "Cirno's Day"
+    },
+    {
+      "Time": "September 9th, 9:09",
+      "Character": "Cirno",
+      "Name": "Cirno Time"
+    },
+    {
+      "Time": "September 10th",
+      "Character": "Kumoi Ichirin",
+      "Name": "Kumoi Ichirin's Day"
+    },
+    {
+      "Time": "September 10th",
+      "Character": "Lizards",
+      "Name": "Lizards' Festival"
+    },
+    {
+      "Time": "September 13th",
+      "Character": "Aizome",
+      "Name": "Aizome Hiyori"
+    },
+    {
+      "Time": "September 19th",
+      "Character": "Cirno",
+      "Name": "Cirno's Day"
+    },
+    {
+      "Time": "September 19th",
+      "Character": "Tsukumo Yatsuhashi",
+      "Name": "Tsukumo Sisters' Day"
+    },
+    {
+      "Time": "September 19th",
+      "Character": "Tatara Kogasa",
+      "Name": "Tatara Kogasa's Day"
+    },
+    {
+      "Time": "September 30th",
+      "Character": "Kurumi",
+      "Name": "Kurumi's Day"
+    },
+    {
+      "Time": "September 30th",
+      "Character": "Curiosities of Lotus Asia",
+      "Name": "Kourindou Release Anniversary"
+    },
+    {
+      "Time": "October 1st",
+      "Character": "Yakumo Yukari",
+      "Name": "Yakumo Yukari's Day"
+    },
+    {
+      "Time": "October 3rd",
+      "Character": "Doremy Sweet",
+      "Name": "Doremy Sweet's Day"
+    },
+    {
+      "Time": "October 4th",
+      "Character": "Houraisan Kaguya",
+      "Name": "Houraisan Kaguya's Day"
+    },
+    {
+      "Time": "October 4th",
+      "Character": "Hinanawi Tenshi",
+      "Name": "Hinanawi Tenshi's Day"
+    },
+    {
+      "Time": "October 4th",
+      "Character": "Watatsuki no Toyohime",
+      "Name": "Watatsuki no Toyohime's Day"
+    },
+    {
+      "Time": "October 5th",
+      "Character": "Hinanawi Tenshi",
+      "Name": "Hinanawi Tenshi's Day"
+    },
+    {
+      "Time": "October 6th",
+      "Character": "Hinanawi Tenshi",
+      "Name": "The festival for the people who did not catch Tenshi's Day"
+    },
+    {
+      "Time": "October 7th",
+      "Character": "Rumia",
+      "Name": "Soudesuka's Day"
+    },
+    {
+      "Time": "October 9th",
+      "Character": "Tengu",
+      "Name": "Tengu's Day"
+    },
+    {
+      "Time": "October 9th",
+      "Character": "Hieda no Akyuu",
+      "Name": "Hieda no Akyuu's Day"
+    },
+    {
+      "Time": "October 10th",
+      "Character": "Kumoi Ichirin",
+      "Name": "Super Ichirin Time"
+    },
+    {
+      "Time": "October 10th",
+      "Character": "Chen",
+      "Name": "Chen's Day"
+    },
+    {
+      "Time": "October 10th",
+      "Character": "TH13 (Ten Desires)",
+      "Name": "TH13's Day"
+    },
+    {
+      "Time": "October 15th",
+      "Character": "Alice Margatroid",
+      "Name": "Alice Margatroid's Day"
+    },
+    {
+      "Time": "October 16th",
+      "Character": "Kirisame Marisa",
+      "Name": "Kirisame Marisa's Day"
+    },
+    {
+      "Time": "October 25th",
+      "Character": "Soga no Toziko",
+      "Name": "Soga no Toziko's Day"
+    },
+    {
+      "Time": "October 26th",
+      "Character": "Reiuji Utsuho",
+      "Name": "Reiuji Utsuho's Day"
+    },
+    {
+      "Time": "October 26th",
+      "Character": "Reiuji Utsuho",
+      "Name": "Reiuji Utsuho's Day"
+    },
+    {
+      "Time": "October 28th",
+      "Character": "Komeiji Koishi",
+      "Name": "Koishi Koishi's Day"
+    },
+    {
+      "Time": "November 10th",
+      "Character": "Kisume",
+      "Name": "Kisume's Day"
+    },
+    {
+      "Time": "November 11th",
+      "Character": "Yasaka Kanako",
+      "Name": "Onbashira's Day"
+    },
+    {
+      "Time": "November 11th",
+      "Character": "Reiuji Utsuho &amp; Kaenbyou Rin &amp; Reisen Udongein Inaba &amp; Tewi Inaba",
+      "Name": "Four Spell Cards' Day"
+    },
+    {
+      "Time": "November 11th",
+      "Character": "Pocky",
+      "Name": "TouHou Pocky's Day"
+    },
+    {
+      "Time": "November 11th",
+      "Character": "Komeiji Satori",
+      "Name": "Komeiji Satori's Day"
+    },
+    {
+      "Time": "November 24th",
+      "Character": "Konpaku Youmu",
+      "Name": "Konpaku Youmu's Day"
+    },
+    {
+      "Time": "December 9th",
+      "Character": "Ghostly Field Club",
+      "Name": "Ghostly Field Club's Day"
+    },
+    {
+      "Time": "December 10th",
+      "Character": "Mononobe no Futo",
+      "Name": "Mononobe no Futo's Day"
+    },
+    {
+      "Time": "December 21st",
+      "Character": "Hata no Kokoro",
+      "Name": "Expressionless Day"
+    },
+    {
+      "Time": "December 24th-25th",
+      "Character": "Kagiyama Hina",
+      "Name": "Yakujin's Christmastime"
+    }
+  ],
+  "DaysEveryMonth": [
+    {
+      "Time": "The 3rd day of every month",
+      "Character": "Ibuki Suika",
+      "Name": "Ibuki Suika's Day"
+    },
+    {
+      "Time": "The 3rd day of every month",
+      "Character": "Doremy Sweet",
+      "Name": "Doremy Sweet's Day"
+    },
+    {
+      "Time": "The 4th day of every month",
+      "Character": "Watatsuki no Yorihime",
+      "Name": "Watatsuki no Yorihime's Day"
+    },
+    {
+      "Time": "The 4th day of every month",
+      "Character": "Miyako Yoshika",
+      "Name": "Miyako Yoshika's Day"
+    },
+    {
+      "Time": "The 5th day of every month",
+      "Character": "Remilia Scarlet",
+      "Name": "Remilia Scarlet's Day"
+    },
+    {
+      "Time": "The 6th day of every month",
+      "Character": "Hakurei Reimu",
+      "Name": "Hakurei Reimu's Day"
+    },
+    {
+      "Time": "The 6th day of every month",
+      "Character": "Hoan Meirin",
+      "Name": "Hoan Meirin's Day"
+    },
+    {
+      "Time": "The 7th day of every month",
+      "Character": "Rumia",
+      "Name": "Rumia's Day"
+    },
+    {
+      "Time": "The 8th day of every month",
+      "Character": "Rumia",
+      "Name": "The festival for the people who did not catch Rumia's Day"
+    },
+    {
+      "Time": "The 8th day of every month",
+      "Character": "Daiyousei",
+      "Name": "Daiyousei's Day"
+    },
+    {
+      "Time": "The 9th day of every month",
+      "Character": "Cirno",
+      "Name": "Cirno's Day"
+    },
+    {
+      "Time": "The 9th day of every month",
+      "Character": "Little Devil",
+      "Name": "Little Devil's Day"
+    },
+    {
+      "Time": "The 9th day of every month",
+      "Character": "Reiuji Utsuho",
+      "Name": "Reiuji Utsuho's Day"
+    },
+    {
+      "Time": "The 9th day of every month",
+      "Character": "Yakumo Ran",
+      "Name": "Kyuubi's Day"
+    },
+    {
+      "Time": "The 10th day of every month",
+      "Character": "Kumoi Ichirin",
+      "Name": "Kumoi Ichirin's Day"
+    },
+    {
+      "Time": "The 11th day of every month",
+      "Character": "Wriggle Nightbug",
+      "Name": "Wriggle Nightbug's Day"
+    },
+    {
+      "Time": "The 15th day of every month",
+      "Character": "Yumemi Okazaki",
+      "Name": "The Professor's Day"
+    },
+    {
+      "Time": "The 15th day of every month",
+      "Character": "Yakumo Ran",
+      "Name": "Yakumo Ran's Day"
+    },
+    {
+      "Time": "The 15th day of every month",
+      "Character": "Kaenbyou Rin",
+      "Name": "Kaenbyou Rin's Day"
+    },
+    {
+      "Time": "The 16th day of every month",
+      "Character": "Izayoi Sakuya",
+      "Name": "Izayoi Sakuya's Day"
+    },
+    {
+      "Time": "The 17th day of every month",
+      "Character": "Houjuu Nue",
+      "Name": "Houjuu Nue's Day"
+    },
+    {
+      "Time": "The 19th day of every month",
+      "Character": "Nagae Iku",
+      "Name": "Iku Sama's Day"
+    },
+    {
+      "Time": "The 20th day of every month",
+      "Character": "Kawasiro Nitori",
+      "Name": "Kawasiro Nitori's Day"
+    },
+    {
+      "Time": "The 21st day of every month",
+      "Character": "Sunny Milk",
+      "Name": "Sun Day"
+    },
+    {
+      "Time": "The 22nd day of every month",
+      "Character": "Kaku Seiga",
+      "Name": "Kaku Seiga's Day"
+    },
+    {
+      "Time": "The 23rd day of every month",
+      "Character": "Syameimaru Aya",
+      "Name": "Syameimaru Aya's Day"
+    },
+    {
+      "Time": "The 24th day of every month",
+      "Character": "Houraijin",
+      "Name": "Immortal Day"
+    },
+    {
+      "Time": "The 25th day of every month",
+      "Character": "Maribel Hearn",
+      "Name": "Maribel Hearn's Day"
+    },
+    {
+      "Time": "The 28th day of every month",
+      "Character": "Ellen",
+      "Name": "Ellen's Day"
+    },
+    {
+      "Time": "The 30th day of every month",
+      "Character": "Mima",
+      "Name": "Mima Sama's Day"
+    }
+  ],
+  "DaysEveryWeek": [
+    {
+      "Time": "Every Monday",
+      "Character": "Lunar Capital Characters",
+      "Name": "Lunar Capital Characters' Day"
+    },
+    {
+      "Time": "Every Tuesday",
+      "Character": "Nazrin",
+      "Name": "Nazrin's Day"
+    },
+    {
+      "Time": "Every Friday",
+      "Character": "Murasa Minamitu",
+      "Name": "Murasa Minamitu's Day"
+    },
+    {
+      "Time": "Every Sunday",
+      "Character": "Merlin Prismriver",
+      "Name": "Merlin Prismriver's Day"
+    }
+  ],
+  "Months": [
+    {
+      "Time": "July",
+      "Character": "Syameimaru Aya",
+      "Name": "Syameimaru Aya's Day"
+    },
+    {
+      "Time": "August",
+      "Character": "Tsukumo Yatsuhashi",
+      "Name": "Tsukumo Yatsuhashi's Day"
+    }
+  ]
+}</value>
+  </data>
+</root>
