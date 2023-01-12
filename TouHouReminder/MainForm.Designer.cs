@@ -57,7 +57,7 @@
             this.ToolStripMenuItem_AutoExit,
             this.ToolStripMenuItem_Exit});
             this.ContextMenuStrip.Name = "ContextMenuStrip";
-            this.ContextMenuStrip.Size = new System.Drawing.Size(231, 114);
+            this.ContextMenuStrip.Size = new System.Drawing.Size(231, 92);
             // 
             // ToolStripMenuItem_ShowTimetable
             // 

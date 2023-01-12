@@ -66,26 +66,21 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="NotifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAMQOAADEDgAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH+q+/9/qvv/gKn7kAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9rvr/fa36/36s+/9/q/v/gKr7xAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8sPrTfa76/36s
-        +/9/qvv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAB8r/r/fqz7/4Cq+/AAAAAAAAAAAAAAAAAAAAAAAAAAAE1m/f9NZv3/TWb9wgAAAABNZv3/TWb9/wAA
-        AABNZv3/TWb9/32v+v9/q/v/AAAAAAAAAAAAAAAAAAAAAAAAAABJavv//////0lq+/9Javv//////2uD
-        /P9JavsjSWr7//////9givv/fq37/4Cq+/8AAAAAAAAAAAAAAAAAAAAAQ3D6//////9DcPr/Q3D6////
-        //9niPv/Q3D6I0Nw+v//////Q3D6/32u+v9/q/v/AAAAAAAAAAAAAAAAAAAAAD12+P//////PXb4/z12
-        +P//////Y435/z12+P89dvj//////z12+P98r/r/f6v7/4Cq+/9+rfv/AAAAAAAAAAA2ffb+/////zZ9
-        9v42ffb+/////16S9/42ffb+Nn32/v////82ffb+AAAAAAAAAACAqfv/fqz7/wAAAAAwhPXdMIT1/v//
-        //8whPX+MIT1/v////9bmPb+MIT1IzCE9f7/////MIT1/gAAAAAAAAAAgKn7j3+r+/9wqfn56vH9////
-        /////////////1ic9f7/////WJz1/iuJ8yMrifP+/////yuJ8/4AAAAAAAAAAAAAAAB/qvv/fq37/yeN
-        8v4njfL+J43y/ieN8v4njfL+J43y/ieN8v4AAAAAJ43y/ieN8v4njfJ+AAAAAAAAAAAAAAAAgKn7w3+r
-        +/99rvr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AACAqfv/f6v7/32t+/98r/pzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAICp+/F/qvv/fqz7/36t+/99rvr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAICp+/+Aqvv/f6r7/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA/z8AAP8PAAD/4wAA//MAAPMhAADwIAAA8CAAAPAAAAA7dwAAO3cAAKF3AACf/wAAz/8AAMf/
-        AADw/wAA+P8AAA==
+        AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAMQOAADEDgAAAAAAAAAA
+        AAD///////+wX2jnrZDl+P+asP79///rx7Xfn33fnH3h17nhqov27er////////////////6///l3sPj
+        normsI/////ipYXh17nh17nYnnvh17nhnn////////////////////+1RVbnrZD92uT8/v7h17nh17nh
+        17nh17nh17nh17ndnnj//////////////////////v79///////h17nh17nerozh17ni2Lrh17nh17n/
+        ///9///////////////////mt7r5+/v95OLh17nh17m5ZFzh17nh17nh1bm1UV3/////////////////
+        ///////////////5/v3////////////h17nh17nh17n////+7K3/////////////////////////////
+        ////////5q7////h17nh17nh17n///7////////////////////UYmn9//7//////////////v7///+z
+        YGLNgXvh17m4cnn////////////////////////fl53aa2/+/f/+/v7///7///+7anPo+P78/v7kysr/
+        ///89eL+/v7////////////////////////7///2zNPAdnbAZW7CYob9//+3W2b//////////////v//
+        ///////XZmr////////9//7///+2Slfs16Pm+f/k9/713KT/+vqasP7////////////////Yam77//7/
+        ///////////f+v/10NLYoaqwx//u26Lt2aL////k9/7////////+/v77///////RcHT////9//7k9/7/
+        /v/nspHdro///f3mtJD9/f3////k9/7///////////////////////+tT1qqa3/PanLt5rvu2aL//f3/
+        +/v4///7//zbtr7///////////////////////+wp6r///////+3Y168WF3Vfnr////////9/f37//7/
+        ///////////////////////q+P7///////////////////////////////////////8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
