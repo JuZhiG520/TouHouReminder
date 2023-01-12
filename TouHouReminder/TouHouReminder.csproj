@@ -6,10 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>TouHouReminder.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="MoeGirlParser.cs~RF1de5049b.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TouHouReminder.ico" />
   </ItemGroup>
 
   <ItemGroup>

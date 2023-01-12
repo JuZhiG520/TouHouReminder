@@ -58,9 +58,9 @@ namespace TouHouReminder
             ToastManager.Update("init", "1", $"{totalCount}/{totalCount} festivals", "Completed");
         }
 
-        public static FestivalCollection? Load()
+        public static FestivalCollection? Load(string fileName)
         {
-            if (!File.Exists("config.json"))
+            if (!File.Exists(fileName))
             {
                 Generate();
             }
@@ -71,7 +71,7 @@ namespace TouHouReminder
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
 
-            return JsonSerializer.Deserialize<FestivalCollection>(File.ReadAllText("config.json"), options);
+            return JsonSerializer.Deserialize<FestivalCollection>(File.ReadAllText(fileName), options);
         }
     }
 }

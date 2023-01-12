@@ -1,16 +1,20 @@
+using Microsoft.Win32;
+using System.Reflection;
+using System.Security.AccessControl;
+
 namespace TouHouReminder
 {
     public partial class MainForm : Form
     {
         public MainForm()
         {
-            FestivalCollection? collection = ConfigLoader.Load();
+            FestivalCollection? collection = ConfigLoader.Load($"{Application.StartupPath}config.json");
 
             if (collection is null)
             {
-                Environment.Exit(1);
+                throw new Exception();
             }
-
+            
             List<(int, int, TimeConverter.MatchResult)> indexList = new();
 
             int maximum = Enum.GetNames(typeof(FestivalType)).Length - 1;
@@ -31,7 +35,7 @@ namespace TouHouReminder
                         ToastManager.Send("Try to restart the application",
                             "There is something wrong with the config file");
 
-                        Environment.Exit(1);
+                        throw;
                     }
                 }
             }
@@ -66,101 +70,276 @@ namespace TouHouReminder
                 }
             }
 
-            if (indexList.Count == 0)
+            if (indexList.Count > 0)
+            {
+                for (int i = 0; i < Enum.GetNames(typeof(FestivalType)).Length; i++)
+                {
+                    if (indexList.FindIndex(item => item.Item1 == i) != -1)
+                    {
+                        if (i < (int)FestivalType.Months)
+                        {
+                            indexList.RemoveAll(item => collection[item.Item1][item.Item2].Time.StartsWith("Every day in")
+                            || collection[item.Item1][item.Item2].Time.Contains("to"));
+                        }
+
+                        indexList.RemoveAll(item => item.Item1 > i);
+                        break;
+                    }
+                }
+
+                List<string> timeList = new(), charList = new(), nameList = new();
+                indexList.ForEach(item =>
+                {
+                    FestivalInfo info = collection[item.Item1][item.Item2];
+
+                    if (!timeList.Contains(info.Time))
+                    {
+                        timeList.Add(collection[item.Item1][item.Item2].Time);
+                    }
+
+                    if (!charList.Contains(info.Character))
+                    {
+                        charList.Add(collection[item.Item1][item.Item2].Character);
+                    }
+
+                    if (!nameList.Contains(info.Name))
+                    {
+                        nameList.Add(collection[item.Item1][item.Item2].Name);
+                    }
+                });
+
+                FestivalInfo info = new();
+
+                for (int i = 0; i < timeList.Count; i++)
+                {
+                    info.Time += timeList[i];
+
+                    if (i < indexList.Count - 2)
+                    {
+                        info.Time += ", ";
+                    }
+                    else if (i == indexList.Count - 2)
+                    {
+                        info.Time += " and ";
+                    }
+                }
+
+                for (int i = 0; i < charList.Count; i++)
+                {
+                    info.Character += charList[i];
+
+                    if (i < indexList.Count - 2)
+                    {
+                        info.Character += ", ";
+                    }
+                    else if (i == indexList.Count - 2)
+                    {
+                        info.Character += " and ";
+                    }
+                }
+
+                for (int i = 0; i < nameList.Count; i++)
+                {
+                    if (nameList[i].StartsWith("The"))
+                    {
+                        nameList[i] = "the" + nameList[i][3..];
+                    }
+
+                    info.Name += nameList[i];
+
+                    if (i < indexList.Count - 2)
+                    {
+                        info.Name += ", ";
+                    }
+                    else if (i == indexList.Count - 2)
+                    {
+                        info.Name += " and ";
+                    }
+                }
+
+                ToastManager.Send($"Today is {info.Name}", $"{info.Time} is the TouHou day for {info.Character}!");
+            }
+
+            bool autoExit = GetRegistryKey_AutoExit();
+            if (autoExit && !Environment.CurrentDirectory.Equals(Application.StartupPath[..^1]))
             {
                 Environment.Exit(0);
             }
 
+
+            InitializeComponent();
+            ToolStripMenuItem_AutoRun.Checked = TryGetValueInRegistry_AutoRun();
+            ToolStripMenuItem_AutoExit.Checked = autoExit;
+
+            List<TreeNode> treeNodeArray = new();
             for (int i = 0; i < Enum.GetNames(typeof(FestivalType)).Length; i++)
             {
-                if (indexList.FindIndex(item => item.Item1 == i) != -1)
-                {
-                    if (i < (int)FestivalType.Months)
-                    {
-                        indexList.RemoveAll(item => collection[item.Item1][item.Item2].Time.StartsWith("Every day in")
-                        || collection[item.Item1][item.Item2].Time.Contains("to"));
-                    }
+                treeNodeArray.Add(TreeView.Nodes.Add(((FestivalType)i).ToString()));
+                treeNodeArray[i].Nodes.AddRange((from item in collection[i] select new TreeNode(item.Name)).ToArray());
 
-                    indexList.RemoveAll(item => item.Item1 > i);
-                    break;
+                for (int j = 0; j < treeNodeArray[i].Nodes.Count; j++)
+                {
+                    treeNodeArray[i].Nodes[j].Nodes.Add($"Character: {collection[i][j].Character}");
+                    treeNodeArray[i].Nodes[j].Nodes.Add($"Time: {collection[i][j].Time}");
+                }
+            }
+        }
+
+        private static bool TryGetValueInRegistry_AutoRun()
+        {
+            string? valueName = Assembly.GetEntryAssembly()?.GetName().Name;
+
+            if (valueName is null)
+            {
+                throw new Exception();
+            }
+
+            string subKeyName = Environment.Is64BitProcess ?
+                 "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+                 : "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run";
+
+            RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+
+            if (registryKey is not null)
+            {
+                return registryKey.GetValue(valueName) is not null;
+            }
+
+            return false;
+        }
+
+        private static void SetRegistryKey_AutoRun(bool autoRun)
+        {
+            string? valueName = Assembly.GetEntryAssembly()?.GetName().Name;
+            string value = $"\"{Application.ExecutablePath}\"";
+
+            if (valueName is null)
+            {
+                throw new Exception();
+            }
+
+            string subKeyName = Environment.Is64BitProcess ?
+                "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+                : "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run";
+
+            RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+
+            if (autoRun)
+            {
+                registryKey ??= Registry.LocalMachine.CreateSubKey(subKeyName);
+
+                if (registryKey.GetValue(valueName) is null)
+                {
+                    registryKey.SetValue(valueName, value);
+                }
+                else
+                {
+                    registryKey.DeleteValue(valueName);
+                    registryKey.SetValue(valueName, value);
+                }
+            }
+            else
+            {
+                if (registryKey is not null && registryKey.GetValue(valueName) is not null)
+                {
+                    registryKey.DeleteValue(valueName);
+                }
+            }
+        }
+
+        private static bool GetRegistryKey_AutoExit()
+        {
+            AssemblyName? assemblyName = Assembly.GetEntryAssembly()?.GetName();
+
+            if (assemblyName is null || assemblyName.Name is null)
+            {
+                throw new Exception();
+            }
+
+            string subKeyName = $"SOFTWARE\\{assemblyName.Name}";
+
+            RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+
+            if (registryKey is not null)
+            {
+                object? value = registryKey.GetValue("AutoExit");
+                if (value is not null)
+                {
+                    return value.Equals(true.ToString());
                 }
             }
 
-            List<string> timeList = new(), charList = new(), nameList = new();
-            indexList.ForEach(item =>
+            return false;
+        }
+
+        private static void SetRegistryKey_AutoExit(bool autoExit)
+        {
+            AssemblyName? assemblyName = Assembly.GetEntryAssembly()?.GetName();
+
+            if (assemblyName is null || assemblyName.Name is null)
             {
-                FestivalInfo info = collection[item.Item1][item.Item2];
-
-                if (!timeList.Contains(info.Time))
-                {
-                    timeList.Add(collection[item.Item1][item.Item2].Time);
-                }
-
-                if (!charList.Contains(info.Character))
-                {
-                    charList.Add(collection[item.Item1][item.Item2].Character);
-                }
-
-                if (!nameList.Contains(info.Name))
-                {
-                    nameList.Add(collection[item.Item1][item.Item2].Name);
-                }
-            });
-
-            FestivalInfo info = new();
-
-            for (int i = 0; i < timeList.Count; i++)
-            {
-                info.Time += timeList[i];
-
-                if (i < indexList.Count - 2)
-                {
-                    info.Time += ", ";
-                }
-                else if (i == indexList.Count - 2)
-                {
-                    info.Time += " and ";
-                }
+                throw new Exception();
             }
 
-            for (int i = 0; i < charList.Count; i++)
-            {
-                info.Character += charList[i];
+            string subKeyName = $"SOFTWARE\\{assemblyName.Name}";
 
-                if (i < indexList.Count - 2)
+            RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
+                RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
+
+            if (autoExit)
+            {
+                registryKey ??= Registry.LocalMachine.CreateSubKey(subKeyName);
+
+                if (registryKey.GetValue("AutoExit") is null)
                 {
-                    info.Character += ", ";
+                    registryKey.SetValue("AutoExit", autoExit);
                 }
-                else if (i == indexList.Count - 2)
+                else
                 {
-                    info.Character += " and ";
+                    registryKey.DeleteValue("AutoExit");
+                    registryKey.SetValue("AutoExit", autoExit);
                 }
             }
-
-            for (int i = 0; i < nameList.Count; i++)
+            else
             {
-                if (nameList[i].StartsWith("The"))
+                if (registryKey is not null && registryKey.GetValue(subKeyName) is not null)
                 {
-                    nameList[i] = "the" + nameList[i][3..];
-                }
-
-                info.Name += nameList[i];
-
-                if (i < indexList.Count - 2)
-                {
-                    info.Name += ", ";
-                }
-                else if (i == indexList.Count - 2)
-                {
-                    info.Name += " and ";
+                    registryKey.DeleteValue("AutoExit");
                 }
             }
+        }
 
-            ToastManager.Send($"Today is {info.Name}", $"{info.Time} is the TouHou day for {info.Character}!");
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenuStrip.Show();
+            }
+        }
 
+        private void ToolStripMenuItem_ShowTimetable_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void ToolStripMenuItem_AutoRun_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem_AutoRun.Checked = !ToolStripMenuItem_AutoRun.Checked;
+            SetRegistryKey_AutoRun(ToolStripMenuItem_AutoRun.Checked);
+        }
+
+        private void ToolStripMenuItem_AutoExit_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem_AutoExit.Checked = !ToolStripMenuItem_AutoExit.Checked;
+            SetRegistryKey_AutoExit(ToolStripMenuItem_AutoExit.Checked);
+        }
+
+        private void ToolStripMenuItem_Exit_Click(object sender, EventArgs e)
+        {
             Environment.Exit(0);
-
-            //InitializeComponent();
         }
     }
 }

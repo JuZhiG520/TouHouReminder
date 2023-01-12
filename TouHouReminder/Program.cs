@@ -15,7 +15,30 @@ namespace TouHouReminder
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+
+            try
+            {
+                Application.Run(new MainForm());
+            }
+            catch (Exception e)
+            {
+                using StreamWriter streamWriter = new($"{Application.StartupPath}\\log.txt");
+                streamWriter.WriteLine("--------------------Time--------------------");
+                streamWriter.WriteLine(DateTime.Now);
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("--------------------Message--------------------");
+                streamWriter.WriteLine(e.Message);
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("--------------------TargetSite--------------------");
+                streamWriter.WriteLine(e.TargetSite);
+                streamWriter.WriteLine();
+                streamWriter.WriteLine("--------------------StackTrace--------------------");
+                streamWriter.WriteLine(e.StackTrace);
+                streamWriter.Flush();
+
+                throw;
+            }
+            
 
             ToastNotificationManagerCompat.Uninstall();
         }
