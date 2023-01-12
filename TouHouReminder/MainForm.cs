@@ -263,26 +263,16 @@ namespace TouHouReminder
             RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
 
-            if (autoExit)
-            {
-                registryKey ??= Registry.LocalMachine.CreateSubKey(subKeyName);
+            registryKey ??= Registry.LocalMachine.CreateSubKey(subKeyName);
 
-                if (registryKey.GetValue("AutoExit") is null)
-                {
-                    registryKey.SetValue("AutoExit", autoExit);
-                }
-                else
-                {
-                    registryKey.DeleteValue("AutoExit");
-                    registryKey.SetValue("AutoExit", autoExit);
-                }
+            if (registryKey.GetValue("AutoExit") is null)
+            {
+                registryKey.SetValue("AutoExit", autoExit);
             }
             else
             {
-                if (registryKey is not null && registryKey.GetValue(subKeyName) is not null)
-                {
-                    registryKey.DeleteValue("AutoExit");
-                }
+                registryKey.DeleteValue("AutoExit");
+                registryKey.SetValue("AutoExit", autoExit);
             }
         }
 
