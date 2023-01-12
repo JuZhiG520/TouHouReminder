@@ -10,6 +10,14 @@ namespace TouHouReminder
         [STAThread]
         static void Main()
         {
+            bool createdNew;
+            using Mutex mutex = new(true, Application.ProductName, out createdNew);
+
+            if (!createdNew)
+            {
+                Environment.Exit(0);
+            }
+
             ToastNotificationManagerCompat.History.Clear();
 
             // To customize application configuration such as set high DPI settings or default font,

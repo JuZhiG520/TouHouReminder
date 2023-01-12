@@ -57,7 +57,7 @@
             this.ToolStripMenuItem_AutoExit,
             this.ToolStripMenuItem_Exit});
             this.ContextMenuStrip.Name = "ContextMenuStrip";
-            this.ContextMenuStrip.Size = new System.Drawing.Size(231, 92);
+            this.ContextMenuStrip.Size = new System.Drawing.Size(231, 114);
             // 
             // ToolStripMenuItem_ShowTimetable
             // 
@@ -68,6 +68,7 @@
             // 
             // ToolStripMenuItem_AutoRun
             // 
+            this.ToolStripMenuItem_AutoRun.CheckOnClick = true;
             this.ToolStripMenuItem_AutoRun.Name = "ToolStripMenuItem_AutoRun";
             this.ToolStripMenuItem_AutoRun.Size = new System.Drawing.Size(230, 22);
             this.ToolStripMenuItem_AutoRun.Text = "Start automatically at boot";
@@ -75,6 +76,7 @@
             // 
             // ToolStripMenuItem_AutoExit
             // 
+            this.ToolStripMenuItem_AutoExit.CheckOnClick = true;
             this.ToolStripMenuItem_AutoExit.Name = "ToolStripMenuItem_AutoExit";
             this.ToolStripMenuItem_AutoExit.Size = new System.Drawing.Size(230, 22);
             this.ToolStripMenuItem_AutoExit.Text = "Exit automatically at boot";

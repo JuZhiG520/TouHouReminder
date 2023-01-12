@@ -187,13 +187,7 @@ namespace TouHouReminder
 
         private static bool TryGetValueInRegistry_AutoRun()
         {
-            string? valueName = Assembly.GetEntryAssembly()?.GetName().Name;
-
-            if (valueName is null)
-            {
-                throw new Exception();
-            }
-
+            string valueName = Application.ProductName;
             string subKeyName = Environment.Is64BitProcess ?
                  "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
                  : "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run";
@@ -211,14 +205,8 @@ namespace TouHouReminder
 
         private static void SetRegistryKey_AutoRun(bool autoRun)
         {
-            string? valueName = Assembly.GetEntryAssembly()?.GetName().Name;
+            string valueName = Application.ProductName;
             string value = $"\"{Application.ExecutablePath}\"";
-
-            if (valueName is null)
-            {
-                throw new Exception();
-            }
-
             string subKeyName = Environment.Is64BitProcess ?
                 "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
                 : "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run";
@@ -251,14 +239,7 @@ namespace TouHouReminder
 
         private static bool GetRegistryKey_AutoExit()
         {
-            AssemblyName? assemblyName = Assembly.GetEntryAssembly()?.GetName();
-
-            if (assemblyName is null || assemblyName.Name is null)
-            {
-                throw new Exception();
-            }
-
-            string subKeyName = $"SOFTWARE\\{assemblyName.Name}";
+            string subKeyName = $"SOFTWARE\\{Application.ProductName}";
 
             RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
@@ -277,14 +258,7 @@ namespace TouHouReminder
 
         private static void SetRegistryKey_AutoExit(bool autoExit)
         {
-            AssemblyName? assemblyName = Assembly.GetEntryAssembly()?.GetName();
-
-            if (assemblyName is null || assemblyName.Name is null)
-            {
-                throw new Exception();
-            }
-
-            string subKeyName = $"SOFTWARE\\{assemblyName.Name}";
+            string subKeyName = $"SOFTWARE\\{Application.ProductName}";
 
             RegistryKey? registryKey = Registry.LocalMachine.OpenSubKey(subKeyName,
                 RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
@@ -327,13 +301,11 @@ namespace TouHouReminder
 
         private void ToolStripMenuItem_AutoRun_Click(object sender, EventArgs e)
         {
-            ToolStripMenuItem_AutoRun.Checked = !ToolStripMenuItem_AutoRun.Checked;
             SetRegistryKey_AutoRun(ToolStripMenuItem_AutoRun.Checked);
         }
 
         private void ToolStripMenuItem_AutoExit_Click(object sender, EventArgs e)
         {
-            ToolStripMenuItem_AutoExit.Checked = !ToolStripMenuItem_AutoExit.Checked;
             SetRegistryKey_AutoExit(ToolStripMenuItem_AutoExit.Checked);
         }
 
