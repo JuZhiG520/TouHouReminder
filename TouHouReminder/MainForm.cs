@@ -114,11 +114,11 @@ namespace TouHouReminder
                 {
                     info.Time += timeList[i];
 
-                    if (i < indexList.Count - 2)
+                    if (i < timeList.Count - 2)
                     {
                         info.Time += ", ";
                     }
-                    else if (i == indexList.Count - 2)
+                    else if (i == timeList.Count - 2)
                     {
                         info.Time += " and ";
                     }
@@ -128,11 +128,11 @@ namespace TouHouReminder
                 {
                     info.Character += charList[i];
 
-                    if (i < indexList.Count - 2)
+                    if (i < charList.Count - 2)
                     {
                         info.Character += ", ";
                     }
-                    else if (i == indexList.Count - 2)
+                    else if (i == charList.Count - 2)
                     {
                         info.Character += " and ";
                     }
@@ -147,11 +147,11 @@ namespace TouHouReminder
 
                     info.Name += nameList[i];
 
-                    if (i < indexList.Count - 2)
+                    if (i < nameList.Count - 2)
                     {
                         info.Name += ", ";
                     }
-                    else if (i == indexList.Count - 2)
+                    else if (i == charList.Count - 2)
                     {
                         info.Name += " and ";
                     }
