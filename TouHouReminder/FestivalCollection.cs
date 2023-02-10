@@ -10,9 +10,9 @@
 
     public record FestivalInfo
     {
+        public string Name { get; set; } = string.Empty;
         public string Time { get; set; } = string.Empty;
         public string Character { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
     }
 
     public class FestivalCollection

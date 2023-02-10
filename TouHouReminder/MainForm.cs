@@ -92,6 +92,11 @@ namespace TouHouReminder
                 {
                     FestivalInfo info = collection[item.Item1][item.Item2];
 
+                    if (!nameList.Contains(info.Name))
+                    {
+                        nameList.Add(collection[item.Item1][item.Item2].Name);
+                    }
+
                     if (!timeList.Contains(info.Time))
                     {
                         timeList.Add(collection[item.Item1][item.Item2].Time);
@@ -101,14 +106,41 @@ namespace TouHouReminder
                     {
                         charList.Add(collection[item.Item1][item.Item2].Character);
                     }
-
-                    if (!nameList.Contains(info.Name))
-                    {
-                        nameList.Add(collection[item.Item1][item.Item2].Name);
-                    }
                 });
 
                 FestivalInfo info = new();
+
+                if (nameList.Count <= 2)
+                {
+                    for (int i = 0; i < nameList.Count; i++)
+                    {
+                        if (nameList[i].StartsWith("The"))
+                        {
+                            nameList[i] = "the" + nameList[i][3..];
+                        }
+
+                        info.Name += nameList[i];
+
+                        if (i < nameList.Count - 2)
+                        {
+                            info.Name += ", ";
+                        }
+                        else if (i == nameList.Count - 2)
+                        {
+                            info.Name += " and ";
+                        }
+                    }
+                }
+                else
+                {
+                    if (nameList[0].StartsWith("The"))
+                    {
+                        nameList[0] = "the" + nameList[0][3..];
+                    }
+
+                    info.Name += nameList[0];
+                    info.Name += $" and the days for {nameList.Count - 1} other characters";
+                }
 
                 for (int i = 0; i < timeList.Count; i++)
                 {
@@ -138,25 +170,6 @@ namespace TouHouReminder
                     }
                 }
 
-                for (int i = 0; i < nameList.Count; i++)
-                {
-                    if (nameList[i].StartsWith("The"))
-                    {
-                        nameList[i] = "the" + nameList[i][3..];
-                    }
-
-                    info.Name += nameList[i];
-
-                    if (i < nameList.Count - 2)
-                    {
-                        info.Name += ", ";
-                    }
-                    else if (i == charList.Count - 2)
-                    {
-                        info.Name += " and ";
-                    }
-                }
-
                 ToastManager.Send($"Today is {info.Name}", $"{info.Time} is the TouHou day for {info.Character}!");
             }
 
@@ -171,16 +184,16 @@ namespace TouHouReminder
             ToolStripMenuItem_AutoRun.Checked = TryGetValueInRegistry_AutoRun();
             ToolStripMenuItem_AutoExit.Checked = autoExit;
 
-            List<TreeNode> treeNodeArray = new();
+            List<TreeNode> treeNodeList = new();
             for (int i = 0; i < Enum.GetNames(typeof(FestivalType)).Length; i++)
             {
-                treeNodeArray.Add(TreeView.Nodes.Add(((FestivalType)i).ToString()));
-                treeNodeArray[i].Nodes.AddRange((from item in collection[i] select new TreeNode(item.Name)).ToArray());
+                treeNodeList.Add(TreeView.Nodes.Add(((FestivalType)i).ToString()));
+                treeNodeList[i].Nodes.AddRange((from item in collection[i] select new TreeNode(item.Name)).ToArray());
 
-                for (int j = 0; j < treeNodeArray[i].Nodes.Count; j++)
+                for (int j = 0; j < treeNodeList[i].Nodes.Count; j++)
                 {
-                    treeNodeArray[i].Nodes[j].Nodes.Add($"Character: {collection[i][j].Character}");
-                    treeNodeArray[i].Nodes[j].Nodes.Add($"Time: {collection[i][j].Time}");
+                    treeNodeList[i].Nodes[j].Nodes.Add($"Time: {collection[i][j].Time}");
+                    treeNodeList[i].Nodes[j].Nodes.Add($"Character: {collection[i][j].Character}");
                 }
             }
         }

@@ -50,8 +50,5 @@ namespace TouHouReminder
 
             ToastNotificationManagerCompat.Uninstall();
         }
-
-        //const int SPI_SETDESKWALLPAPER = 0x0014;
-        //const int SPIF_SENDWININICHANGE = 0x0002;
     }
 }
